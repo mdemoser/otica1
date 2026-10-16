@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendas - ERP-Ozóó</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/protecao.js"></script>
+</head>
+<body class="pagina-vendas tem-menu">
+    <main>
+        <h1>Vendas</h1>
+
+        <form id="form-venda" class="venda-grid" action="pagamentos.html" method="get">
+            <div class="campo">
+                <label for="serie">Nº de série</label>
+                <input id="serie" type="number" name="serie" min="0" step="1"
+                       inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data</label>
+                <input id="data" type="date" name="data" required>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="produto">Produto</label>
+                <textarea id="produto" name="produto" rows="4"
+                          placeholder="Descreva o produto vendido" required></textarea>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" name="observacoes" rows="4"
+                          placeholder="Anotações sobre a venda (opcional)"></textarea>
+            </div>
+
+            <div class="acoes">
+                <button type="submit" id="btn-concluir" class="btn-concluir">Concluir</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="../js/comum.js"></script>
+
+    <script src="../js/vendas.js"></script>
+</body>
+</html>

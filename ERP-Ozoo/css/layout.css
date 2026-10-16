@@ -1,0 +1,118 @@
+/* ===== BARRA LATERAL (todas as páginas internas) ===== */
+
+:root {
+  --largura-menu: 220px;
+}
+
+/* reserva o espaço da barra à esquerda */
+body.tem-menu {
+  padding-left: var(--largura-menu);
+}
+
+.menu-lateral {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: var(--largura-menu);
+  padding: 20px 12px;
+  background: #1f2933;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.menu-lateral .menu-titulo {
+  margin: 0 0 20px;
+  padding: 0 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.menu-lateral nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-lateral nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: #cbd2d9;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.menu-lateral nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+/* página em que a pessoa está */
+.menu-lateral nav a[aria-current="page"] {
+  background: var(--cor-principal, #1a73e8);
+  color: #fff;
+  font-weight: 600;
+}
+
+.menu-lateral .menu-sair {
+  width: 100%;
+  margin-top: auto; /* empurra o Sair para o pé da barra */
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  background: transparent;
+  color: #cbd2d9;
+  font-size: 0.95rem;
+  text-align: left;
+  cursor: pointer;
+}
+
+.menu-lateral .menu-sair:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.menu-lateral a:focus-visible,
+.menu-lateral button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* ===== TELA ESTREITA: a barra vira uma faixa no topo ===== */
+@media (max-width: 700px) {
+  body.tem-menu {
+    padding-left: 0;
+  }
+
+  .menu-lateral {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 16px;
+    width: 100%;
+    padding: 10px 12px;
+  }
+
+  .menu-lateral .menu-titulo {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 1.1rem;
+  }
+
+  .menu-lateral nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .menu-lateral .menu-sair {
+    width: auto;
+    margin: 0 0 0 auto;
+  }
+}

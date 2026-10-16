@@ -1,0 +1,330 @@
+/* ===== CLIENTES ===== */
+
+body.pagina-clientes,
+body.pagina-clientes *,
+body.pagina-clientes *::before,
+body.pagina-clientes *::after {
+  box-sizing: border-box;
+}
+
+body.pagina-clientes {
+  --alt-linha: 40px; /* altura de cada linha das tabelas */
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f4f7;
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+}
+
+body.pagina-clientes main {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 16px 32px;
+}
+
+body.pagina-clientes h1 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #d5dae1;
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+body.pagina-clientes h2 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+
+/* ===== PAINÉIS ===== */
+body.pagina-clientes .cadastro-grid,
+body.pagina-clientes section {
+  width: 100%;
+  margin: 0 0 16px;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dde1e6;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== FORMULÁRIO (duas colunas) ===== */
+body.pagina-clientes .cadastro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+}
+
+body.pagina-clientes .campo {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: left;
+}
+
+body.pagina-clientes .campo label {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+body.pagina-clientes .campo input {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #b5bcc6;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+body.pagina-clientes input:focus-visible,
+body.pagina-clientes button:focus-visible,
+body.pagina-clientes tr:focus-visible {
+  outline: 2px solid var(--cor-principal, #1a73e8);
+  outline-offset: -2px;
+}
+
+/* mensagem de sucesso/erro */
+body.pagina-clientes .mensagem {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+body.pagina-clientes .mensagem:empty {
+  display: none;
+}
+
+body.pagina-clientes .mensagem.sucesso {
+  background: #e3f3e6;
+  color: #1b5e2b;
+}
+
+body.pagina-clientes .mensagem.erro {
+  background: #fde8e6;
+  color: #8c1d18;
+}
+
+/* ===== BOTÕES: tamanho normal, à direita, com espaço entre eles ===== */
+body.pagina-clientes .cadastro-grid .acoes {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin: 0;
+}
+
+body.pagina-clientes .cadastro-grid .acoes button {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 110px;
+  height: 38px;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+body.pagina-clientes .btn-menu {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 38px;
+  padding: 0 20px;
+  border: 1px solid #b5bcc6;
+  border-radius: 6px;
+  background: #fff;
+  color: #1f2933;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.pagina-clientes .btn-salvar {
+  border: 1px solid var(--cor-principal, #1a73e8);
+  background: var(--cor-principal, #1a73e8);
+  color: #fff;
+}
+
+body.pagina-clientes .btn-salvar:hover {
+  background: var(--cor-principal-escura, #155ab6);
+}
+
+body.pagina-clientes .btn-perigo {
+  border: 1px solid #b3261e;
+  background: #fff;
+  color: #b3261e;
+}
+
+body.pagina-clientes .btn-perigo:hover {
+  background: #b3261e;
+  color: #fff;
+}
+
+body.pagina-clientes .btn-limpar {
+  border: 1px solid #b5bcc6;
+  background: #fff;
+  color: #1f2933;
+}
+
+body.pagina-clientes .btn-limpar:hover {
+  background: #eef0f2;
+}
+
+body.pagina-clientes .btn-menu {
+  border: 1px solid #b5bcc6;
+  background: #fff;
+  color: #1f2933;
+}
+
+body.pagina-clientes .btn-menu:hover {
+  background: #eef0f2;
+}
+
+/* ===== TABELAS ===== */
+
+/* caixa de rolagem: vertical e horizontal, com altura limitada */
+body.pagina-clientes .tabela-wrap {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #dde1e6;
+  border-radius: 6px;
+}
+
+/* cabeçalho + 4 linhas de clientes */
+body.pagina-clientes .lista-clientes {
+  max-height: calc(var(--alt-linha) * 5 + 2px);
+}
+
+/* cabeçalho + 5 linhas de histórico */
+body.pagina-clientes .lista-historico {
+  max-height: calc(var(--alt-linha) * 6 + 2px);
+}
+
+body.pagina-clientes table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+body.pagina-clientes .tabela-clientes {
+  min-width: 700px;
+}
+
+body.pagina-clientes .tabela-historico {
+  table-layout: fixed;
+  min-width: 820px;
+}
+
+body.pagina-clientes thead { display: table-header-group; }
+body.pagina-clientes tbody { display: table-row-group; }
+body.pagina-clientes tr    { display: table-row; }
+
+/* nenhuma célula quebra linha: cada dado fica sob o seu título */
+body.pagina-clientes th,
+body.pagina-clientes td {
+  display: table-cell;
+  height: var(--alt-linha);
+  padding: 0 10px;
+  border-bottom: 1px solid #e6e9ee;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* cabeçalho fixo enquanto a lista rola na vertical */
+body.pagina-clientes th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #e9edf2;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+body.pagina-clientes td {
+  font-size: 0.92rem;
+}
+
+body.pagina-clientes tbody tr:nth-child(even) {
+  background: #f8f9fb;
+}
+
+body.pagina-clientes tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* linhas de cliente são clicáveis */
+body.pagina-clientes tr[data-id] {
+  cursor: pointer;
+}
+
+body.pagina-clientes .tabela-clientes tr[data-id]:hover {
+  background: #e8f0fe;
+}
+
+/* linha selecionada (vem depois do hover para vencer) */
+body.pagina-clientes .tabela-clientes tbody tr.selecionada,
+body.pagina-clientes .tabela-clientes tbody tr.selecionada:hover {
+  background: #cfe0fc;
+  font-weight: 600;
+}
+
+/* mensagem quando não há linhas */
+body.pagina-clientes td.vazio {
+  text-align: center;
+  color: #6b7480;
+  font-style: italic;
+  white-space: normal;
+}
+
+/* descrição longa: cabe na coluna e rola na horizontal dentro dela */
+body.pagina-clientes .rolagem {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+}
+
+body.pagina-clientes .valor {
+  text-align: right;
+}
+
+/* situação da compra */
+body.pagina-clientes .situacao {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+body.pagina-clientes .situacao-encerrada {
+  background: #e3f3e6;
+  color: #1b5e2b;
+}
+
+body.pagina-clientes .situacao-pagamento {
+  background: #fff1d6;
+  color: #7a4b00;
+}
+
+/* ===== TELA ESTREITA ===== */
+@media (max-width: 700px) {
+  body.pagina-clientes main {
+    padding: 12px 10px 24px;
+  }
+
+  body.pagina-clientes .cadastro-grid {
+    grid-template-columns: 1fr;
+  }
+}

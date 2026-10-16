@@ -1,0 +1,266 @@
+/* ===== PAGAMENTOS ===== */
+
+body.pagina-pagamentos,
+body.pagina-pagamentos *,
+body.pagina-pagamentos *::before,
+body.pagina-pagamentos *::after {
+  box-sizing: border-box;
+}
+
+body.pagina-pagamentos {
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f4f7;
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+}
+
+body.pagina-pagamentos main {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 16px 32px;
+}
+
+body.pagina-pagamentos h1 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #d5dae1;
+  font-size: 1.6rem;
+  text-align: left;
+}
+
+/* painel: duas colunas */
+body.pagina-pagamentos .pagamento-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 16px;
+  width: 100%;
+  margin: 0;
+  padding: 16px;
+  background: #fff;
+  border: 1px solid #dde1e6;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+body.pagina-pagamentos .col-esq     { grid-column: 1; }
+body.pagina-pagamentos .col-dir     { grid-column: 2; }
+body.pagina-pagamentos .campo-largo { grid-column: 1 / -1; }
+
+/* ===== CAMPOS DE TEXTO ===== */
+body.pagina-pagamentos .campo {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: left;
+}
+
+body.pagina-pagamentos .campo label {
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+body.pagina-pagamentos .campo input {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  border: 1px solid #b5bcc6;
+  border-radius: 6px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+/* campos herdados/calculados (somente leitura) */
+body.pagina-pagamentos .campo input[readonly] {
+  background: #eef0f2;
+  color: #3a4452;
+  cursor: default;
+}
+
+body.pagina-pagamentos .campo input:disabled {
+  background: #eef0f2;
+  color: #8a929c;
+  cursor: not-allowed;
+}
+
+/* valor final em destaque */
+body.pagina-pagamentos .valor-final input {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+/* campo numérico sem as setinhas de incremento */
+body.pagina-pagamentos input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+body.pagina-pagamentos input[type="number"]::-webkit-inner-spin-button,
+body.pagina-pagamentos input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* desconto com o "%" à direita da caixa */
+body.pagina-pagamentos .grupo-sufixo {
+  display: flex;
+  width: 100%;
+}
+
+body.pagina-pagamentos .grupo-sufixo input {
+  flex: 1;
+  min-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+body.pagina-pagamentos .sufixo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  border: 1px solid #b5bcc6;
+  border-left: none;
+  border-radius: 0 6px 6px 0;
+  background: #e9edf2;
+  font-weight: 600;
+}
+
+/* ===== CHECKBOX, RADIO E SELECT ===== */
+body.pagina-pagamentos .opcao-linha {
+  margin: 0;
+}
+
+body.pagina-pagamentos .opcao {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+body.pagina-pagamentos .opcao input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: var(--cor-principal, #1a73e8);
+  cursor: pointer;
+}
+
+body.pagina-pagamentos .grupo {
+  min-width: 0;
+  margin: 0;
+  padding: 12px 14px 14px;
+  border: 1px solid #dde1e6;
+  border-radius: 6px;
+}
+
+body.pagina-pagamentos .grupo legend {
+  padding: 0 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+body.pagina-pagamentos .linha-opcoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+}
+
+body.pagina-pagamentos select {
+  height: 34px;
+  min-width: 96px;
+  padding: 0 8px;
+  border: 1px solid #b5bcc6;
+  border-radius: 6px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+body.pagina-pagamentos select:disabled {
+  background: #eef0f2;
+  color: #8a929c;
+  cursor: not-allowed;
+}
+
+body.pagina-pagamentos input:focus-visible,
+body.pagina-pagamentos select:focus-visible,
+body.pagina-pagamentos .btn-voltar:focus-visible {
+  outline: 2px solid var(--cor-principal, #1a73e8);
+  outline-offset: 2px;
+}
+
+/* ===== BOTÃO: Concluir à direita ===== */
+body.pagina-pagamentos .acoes {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+body.pagina-pagamentos .btn-voltar,
+body.pagina-pagamentos .btn-concluir {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 110px;
+  height: 38px;
+  padding: 0 20px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.pagina-pagamentos .btn-voltar {
+  border: 1px solid #b5bcc6;
+  background: #fff;
+  color: #1f2933;
+}
+
+body.pagina-pagamentos .btn-voltar:hover {
+  background: #eef0f2;
+}
+
+body.pagina-pagamentos .btn-concluir {
+  border: 1px solid var(--cor-principal, #1a73e8);
+  background: var(--cor-principal, #1a73e8);
+  color: #fff;
+}
+
+body.pagina-pagamentos .btn-concluir:hover {
+  background: var(--cor-principal-escura, #155ab6);
+}
+
+body.pagina-pagamentos .btn-concluir:focus-visible {
+  outline: 2px solid var(--cor-principal, #1a73e8);
+  outline-offset: 2px;
+}
+
+/* ===== TELA ESTREITA ===== */
+@media (max-width: 700px) {
+  body.pagina-pagamentos main {
+    padding: 12px 10px 24px;
+  }
+
+  body.pagina-pagamentos .pagamento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.pagina-pagamentos .col-esq,
+  body.pagina-pagamentos .col-dir {
+    grid-column: 1;
+  }
+}

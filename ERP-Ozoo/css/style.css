@@ -1,0 +1,9 @@
+@import url(login.css);
+@import url(clientes.css);
+@import url(devolucoes.css);
+@import url(pagamentos.css);
+@import url(servicos.css);
+@import url(vendas.css);
+@import url(concluido.css);
+/* layout.css sempre por último: a barra lateral vence os estilos de cada página */
+@import url(layout.css);

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviço - ERP-Ozóó</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/protecao.js"></script>
+</head>
+<body class="pagina-servicos tem-menu">
+    <main>
+        <h1>Serviço</h1>
+
+        <form id="form-servico" class="servico-grid" action="pagamentos.html" method="get">
+            <div class="campo">
+                <label for="os">Ordem de serviço</label>
+                <input id="os" type="number" name="os" min="0" step="1"
+                       inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+                <label for="data">Data</label>
+                <input id="data" type="date" name="data" required>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="servico">Serviço</label>
+                <input id="servico" type="text" name="servico"
+                       placeholder="Descreva o serviço" required>
+            </div>
+
+            <div class="campo">
+                <label for="prazo">Prazo (dias corridos)</label>
+                <input id="prazo" type="number" name="prazo" min="0" step="1"
+                       inputmode="numeric" required>
+            </div>
+
+            <div class="campo">
+                <label for="entrega">Data de entrega</label>
+                <input id="entrega" type="date" name="entrega" readonly>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="observacao">Observação</label>
+                <textarea id="observacao" name="observacao" rows="4"
+                          placeholder="Anotações sobre o serviço (opcional)"></textarea>
+            </div>
+
+            <div class="campo campo-largo">
+                <label for="estado">Estado</label>
+                <input id="estado" type="text" name="estado"
+                       placeholder="Ex.: aguardando peça, em andamento, pronto">
+            </div>
+
+            <div class="acoes">
+                <button type="submit" id="btn-salvar" class="btn-salvar">Salvar</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="../js/comum.js"></script>
+
+    <script src="../js/servicos.js"></script>
+</body>
+</html>

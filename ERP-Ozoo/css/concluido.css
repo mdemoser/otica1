@@ -1,0 +1,88 @@
+/* ===== OPERAÇÃO CONCLUÍDA ===== */
+
+body.pagina-concluido,
+body.pagina-concluido *,
+body.pagina-concluido *::before,
+body.pagina-concluido *::after {
+  box-sizing: border-box;
+}
+
+body.pagina-concluido {
+  display: block;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f2f4f7;
+  font-family: Arial, sans-serif;
+  color: #1f2933;
+}
+
+/* centraliza o cartão no meio da tela */
+body.pagina-concluido main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 16px;
+}
+
+body.pagina-concluido .cartao-sucesso {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px 24px 32px;
+  background: #fff;
+  border: 1px solid #dde1e6;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+body.pagina-concluido .icone-sucesso {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e3f3e6;
+  color: #1b5e2b;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+body.pagina-concluido h1 {
+  margin: 0 0 28px;
+  padding: 0;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  text-align: center;
+}
+
+body.pagina-concluido .btn-clientes {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  height: 38px;
+  padding: 0 24px;
+  border: 1px solid var(--cor-principal, #1a73e8);
+  border-radius: 6px;
+  background: var(--cor-principal, #1a73e8);
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body.pagina-concluido .btn-clientes:hover {
+  background: var(--cor-principal-escura, #155ab6);
+  border-color: var(--cor-principal-escura, #155ab6);
+}
+
+body.pagina-concluido .btn-clientes:focus-visible {
+  outline: 2px solid var(--cor-principal-escura, #155ab6);
+  outline-offset: 2px;
+}

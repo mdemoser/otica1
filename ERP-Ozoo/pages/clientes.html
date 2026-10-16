@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/protecao.js"></script>
+</head>
+<body class="pagina-clientes tem-menu">
+    <main>
+        <h1>Clientes</h1>
+
+        <!-- CADASTRO -->
+        <form id="form-cliente" class="cadastro-grid">
+            <div class="campo">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" name="nome" autocomplete="name" required>
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Telefone</label>
+                <input id="telefone" type="tel" name="telefone"
+                       placeholder="(11) 912345678"
+                       pattern="\(\d{2}\) 9\d{8}"
+                       title="Formato: (DDD) 9 seguido de 8 dígitos. Exemplo: (11) 912345678"
+                       autocomplete="tel" required>
+            </div>
+
+            <div class="campo">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="email" autocomplete="email">
+            </div>
+
+            <div class="campo">
+                <label for="nascimento">Data de nascimento</label>
+                <input id="nascimento" type="date" name="nascimento">
+            </div>
+
+            <div class="campo">
+                <label for="cpf">CPF (opcional)</label>
+                <input id="cpf" type="text" name="cpf" inputmode="numeric" maxlength="14"
+                       placeholder="000.000.000-00"
+                       pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}"
+                       title="11 dígitos, com ou sem pontuação">
+            </div>
+
+            <div class="campo">
+                <label for="endereco">Endereço</label>
+                <input id="endereco" type="text" name="endereco" autocomplete="street-address">
+            </div>
+
+            <p id="mensagem" class="mensagem" role="status"></p>
+
+            <div class="acoes">
+                <button type="button" id="btn-limpar" class="btn-limpar">Limpar</button>
+                <button type="button" id="btn-deletar" class="btn-perigo">Deletar</button>
+                <button type="submit" id="btn-salvar" class="btn-salvar">Salvar</button>
+            </div>
+        </form>
+
+        <!-- LISTA DE CLIENTES (filtrada pelo formulário) -->
+        <section aria-labelledby="titulo-clientes">
+            <h2 id="titulo-clientes">Lista de clientes</h2>
+            <div class="tabela-wrap lista-clientes">
+                <table class="tabela-clientes">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tel</th>
+                            <th>E-mail</th>
+                            <th>Data de nascimento</th>
+                            <th>CPF</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-clientes"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- HISTÓRICO DE COMPRAS (do cliente selecionado) -->
+        <section aria-labelledby="titulo-historico">
+            <h2 id="titulo-historico">Histórico de compras</h2>
+            <div class="tabela-wrap lista-historico">
+                <table class="tabela-historico">
+                    <colgroup>
+                        <col style="width: 14%">
+                        <col style="width: 32%">
+                        <col style="width: 14%">
+                        <col style="width: 14%">
+                        <col style="width: 26%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>Venda ou serviço</th>
+                            <th>Produto (descrição)</th>
+                            <th>Data da compra</th>
+                            <th class="valor">Valor</th>
+                            <th>Validade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lista-historico"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/comum.js"></script>
+
+    <script src="../js/clientes.js"></script>
+</body>
+</html>

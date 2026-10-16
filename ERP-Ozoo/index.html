@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERP-Ozóó</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="login-page">
+        <div class="login-box">
+            <img src="img/logoOzoo.png" alt="Logo ERP-Ozóó" class="logo">
+
+            <form id="form-login" action="/login" method="post">
+                <div class="campo">  
+                    <label for="usuario" class="login">Login: </label>
+                    <input id="usuario" type="text" name="usuario" autocomplete="username" required />
+                </div>
+
+                <div class="campo">
+                    <label for="senha" class="password">Senha: </label>
+                    <input id="senha" type="password" name="passphrase" autocomplete="current-password" required />
+                </div>
+
+                <button type="submit">Entrar</button>
+                <p id="mensagem-login" style="color: rgb(242, 6, 6); margin-top: 10px;"></p>
+            </form>
+        </div>
+    </main>
+    <script src="js/login.js"></script>
+</body>
+</html>

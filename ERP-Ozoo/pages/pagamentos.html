@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentos - ERP-Ozóó</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/protecao.js"></script>
+</head>
+<body class="pagina-pagamentos tem-menu">
+    <main>
+        <h1>Pagamentos</h1>
+
+        <form id="form-pagamento" class="pagamento-grid" action="concluido.html" method="get">
+            <!-- herdados de vendas / serviço -->
+            <div class="campo col-esq">
+                <label for="serie">Número de série</label>
+                <input id="serie" type="text" name="serie" readonly
+                       placeholder="De venda">
+            </div>
+
+            <div class="campo col-esq">
+                <label for="os">Ordem de serviço</label>
+                <input id="os" type="text" name="os" readonly
+                       placeholder="De serviço">
+            </div>
+
+            <div class="campo col-dir">
+                <label for="op">Ordem de pagamento</label>
+                <input id="op" type="text" name="op" readonly
+                       placeholder="Gerada pelo sistema">
+            </div>
+
+            <!-- entrega -->
+            <div class="opcao-linha campo-largo">
+                <label class="opcao">
+                    <input type="checkbox" id="entrega-domicilio" name="entrega_domicilio">
+                    Entrega a domicílio
+                </label>
+            </div>
+
+            <!-- valores -->
+            <div class="campo col-esq">
+                <label for="valor">Valor de cobrança</label>
+                <input id="valor" type="text" name="valor" inputmode="decimal"
+                       placeholder="0,00">
+            </div>
+
+            <div class="campo col-esq">
+                <label for="desconto">Desconto</label>
+                <div class="grupo-sufixo">
+                    <input id="desconto" type="number" name="desconto"
+                           min="0" max="100" step="0.01" inputmode="decimal"
+                           placeholder="0">
+                    <span class="sufixo" aria-hidden="true">%</span>
+                </div>
+            </div>
+
+            <div class="campo col-esq">
+                <label for="frete">Frete</label>
+                <input id="frete" type="text" name="frete" inputmode="decimal"
+                       placeholder="0,00" disabled>
+            </div>
+
+            <div class="campo col-esq valor-final">
+                <label for="valor-final">Valor final</label>
+                <input id="valor-final" type="text" name="valor_final" readonly
+                       placeholder="R$ 0,00" required>
+            </div>
+
+            <!-- modo de pagamento -->
+            <fieldset class="grupo campo-largo">
+                <legend>Modo de pagamento</legend>
+                <div class="linha-opcoes">
+                    <label class="opcao">
+                        <input type="radio" name="modo" value="avista" id="modo-avista">
+                        À vista
+                    </label>
+
+                    <label class="opcao">
+                        <input type="radio" name="modo" value="parcelado" id="modo-parcelado">
+                        Parcelado
+                    </label>
+
+                    <select id="parcelas" name="parcelas" aria-label="Número de parcelas" disabled>
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="3">3x</option>
+                        <option value="4">4x</option>
+                        <option value="5">5x</option>
+                        <option value="6">6x</option>
+                        <option value="7">7x</option>
+                        <option value="8">8x</option>
+                        <option value="9">9x</option>
+                        <option value="10">10x</option>
+                        <option value="11">11x</option>
+                        <option value="12">12x</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <!-- forma de pagamento -->
+            <fieldset class="grupo campo-largo">
+                <legend>Forma de pagamento</legend>
+                <div class="linha-opcoes">
+                    <label class="opcao">
+                        <input type="checkbox" name="forma" value="pix" id="forma-pix">
+                        Pix
+                    </label>
+
+                    <label class="opcao">
+                        <input type="checkbox" name="forma" value="cartao" id="forma-cartao">
+                        Cartão
+                    </label>
+
+                    <select id="tipo-cartao" name="tipo_cartao" aria-label="Tipo de cartão" disabled>
+                        <option value="credito">Crédito</option>
+                        <option value="debito">Débito</option>
+                    </select>
+
+                    <label class="opcao">
+                        <input type="checkbox" name="forma" value="dinheiro" id="forma-dinheiro">
+                        Dinheiro
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="acoes">
+                <button type="submit" id="btn-concluir" class="btn-concluir">Concluir</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="../js/comum.js"></script>
+
+    <script src="../js/pagamentos.js"></script>
+</body>
+</html>
